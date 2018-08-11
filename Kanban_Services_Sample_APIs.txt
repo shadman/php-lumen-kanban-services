@@ -1,0 +1,143 @@
+
+Sample Kanban Services APIs:
+====================================
+
+
+# Create User
+http://127.0.0.1:81/v2/user
+
+Method: POST
+
+Headers:
+content-type: application/json
+
+Body:
+{
+  "username":"shadman",
+  "password":"shadman",
+  "email":"shadman.jamil@gmail.com"
+}
+
+-------------
+
+# Login
+http://127.0.0.1:81/v2/user/login?username=shadman&password=shadman
+
+Method: GET
+
+Headers:
+content-type: application/json
+
+-------------
+
+# Create Project
+http://127.0.0.1:81/v2/project
+
+Method: POST
+
+Headers:
+content-type: application/json
+authentication: eyJ0eXAiOiJKV1QiLCJhbGciO.......
+
+Body:
+{
+  "name":"my project 2"
+}
+
+-------------
+
+# Specific Project Details
+http://127.0.0.1:81/v2/project/46
+
+Method: GET
+
+Headers:
+content-type: application/json
+authentication: eyJ0eXAiOiJKV1QiLCJhbGciO.......
+
+-------------
+
+# All Project Lists 
+http://127.0.0.1:81/v2/project
+http://127.0.0.1:81/v2/project?role=creator
+http://127.0.0.1:81/v2/project?role=member
+
+Method: GET
+
+Headers:
+content-type: application/json
+authentication: eyJ0eXAiOiJKV1QiLCJhbGciO.......
+
+------------
+
+# Add Team Member in Project
+http://127.0.0.1:81/v2/project/46/team/4
+
+Method: POST 
+
+Headers:
+content-type: application/json
+authentication: eyJ0eXAiOiJKV1QiLCJhbGciO.......
+
+-----------
+
+# List of Project Members
+http://127.0.0.1:81/v2/project/46/team
+
+Method: GET
+
+Headers:
+content-type: application/json
+authentication: eyJ0eXAiOiJKV1QiLCJhbGciO.......
+
+----------
+
+# Delete Team Member
+http://127.0.0.1:81/v2/project/46/team/2
+
+Method: DELETE
+
+Headers:
+content-type: application/json
+authentication: eyJ0eXAiOiJKV1QiLCJhbGciO.......
+
+----------
+
+# Create Task
+http://127.0.0.1:81/v2/project/46/task
+
+Method: POST
+
+Headers:
+content-type: application/json
+authentication: eyJ0eXAiOiJKV1QiLCJhbGciO.......
+
+Body:
+{
+  "title": "my title task",
+  "description": "my description task",
+  "status": "todo"
+
+}
+
+---------
+
+# Update Specific Task
+http://127.0.0.1:81/v2/project/46/task/2
+
+Method: POST
+
+Headers:
+content-type: application/json
+authentication: eyJ0eXAiOiJKV1QiLCJhbGciO.......
+
+Body:
+{
+  "title": "my title udate",
+  "description": "my description updated",
+  "status": "todo"
+
+}
+
+
+---------
